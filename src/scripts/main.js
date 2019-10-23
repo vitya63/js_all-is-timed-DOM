@@ -9,6 +9,6 @@ if (!localStorage.getItem(timer)) {
 timerContainer.textContent = localStorage.getItem(timer);
 
 setInterval(() => {
-  localStorage.timer = Number(localStorage.timer) + 1;
+  localStorage.setItem(timer, Number(localStorage.getItem(timer)) + 1);
   timerContainer.textContent = localStorage.getItem(timer);
 }, 1000);
