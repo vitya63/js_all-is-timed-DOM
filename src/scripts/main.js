@@ -1,13 +1,14 @@
 'use strict';
 
-const timer = document.querySelector('#timer');
+const timerContainer = document.querySelector('#timer');
+const timer = 'timer';
 
-if (!localStorage.hasOwnProperty('timer')) {
-  localStorage.setItem('timer', 0);
+if (!localStorage.getItem(timer)) {
+  localStorage.setItem(timer, 0);
 }
-timer.textContent = localStorage.getItem('timer');
+timerContainer.textContent = localStorage.getItem(timer);
 
 setInterval(() => {
   localStorage.timer = Number(localStorage.timer) + 1;
-  timer.textContent = localStorage.getItem('timer');
+  timerContainer.textContent = localStorage.getItem(timer);
 }, 1000);
